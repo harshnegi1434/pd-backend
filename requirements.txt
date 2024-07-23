@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+ipaddress
+beautifulsoup4
+Flask
+Flask_Cors
+googlesearch_python
+python_dateutil
+python_whois
+Requests
