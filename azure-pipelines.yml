@@ -1,0 +1,20 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Free Trial(615eb9e1-b35a-4985-949d-5840242b9b76)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      docker build -t pdtestbackend.azurecr.io/pd-backend:v1 .
+      az acr login
+      docker push pdtestbackend.azurecr.io/pd-backend:v1
